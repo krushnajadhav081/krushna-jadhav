@@ -1352,6 +1352,8 @@
 
   .tech-stack .icons {
     gap: 0.5rem;
+    justify-content: center;
+    flex-wrap: wrap; /* prevent icons being cut off on small screens */
   }
 
   .tech-stack img {
