@@ -1270,14 +1270,33 @@ h2.impact-title {
   flex-direction: column;
   gap: 20px;
 }
-#introduction .cards {
-  /* Only override properties that differ from global .cards if needed */
-}
-#introduction .design-card {
-  /* Only override properties that differ from global .design-card if needed */
-}
+
 @media (max-width: 1100px) {
   #introduction .cards-container {
     max-height: calc((150px * 4) + (20px * 3));
   }
+}
+.tech-stack {
+  width: 100%;
+  padding: 1.5rem;
+}
+
+.tech-stack .icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  gap: 1.2rem;
+  align-items: center;
+  justify-items: center;
+}
+
+.tech-stack img {
+  width: 100%;
+  max-width: 60px;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.tech-stack img:hover {
+  transform: scale(1.1);
 }
