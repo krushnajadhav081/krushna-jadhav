@@ -1281,19 +1281,28 @@ h2.impact-title {
 }
 
 .tech-stack .icons {
-  display: flex;
-  flex-wrap: nowrap;          /* Force one row */
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  gap: 1.2rem;
   align-items: center;
-  gap: 1rem;
+  justify-items: center;
 }
 
 .tech-stack img {
-  width: clamp(28px, 4vw, 60px); /* Auto-scales by screen size */
+  width: 100%;
+  max-width: 60px;
   height: auto;
   object-fit: contain;
-  flex-shrink: 1;              /* Allows shrinking instead of wrapping */
+  transition: transform 0.25s ease-in-out;
 }
+
+/* Hover only on devices that support hover */
+@media (hover: hover) {
+  .tech-stack img:hover {
+    transform: scale(1.1);
+  }
+}
+  
 
 
 /* Hover only on devices that support hover */
@@ -1309,6 +1318,27 @@ h2.impact-title {
   }
 
   .tech-stack img {
-    max-width: 40px;
+    max-width: 28px;
   }
+  .tech-stack {
+  width: 100%;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+.tech-stack .icons {
+  display: flex;
+  flex-wrap: nowrap;          /* Force one row */
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tech-stack img {
+  width: clamp(28px, 4vw, 60px); /* Auto-scales by screen size */
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 1;              /* Allows shrinking instead of wrapping */
+}
+
 }
