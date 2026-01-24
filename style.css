@@ -354,15 +354,13 @@ body::selection {
 #content-body {
   display: flex;
   background-color: #2d2e32;
-  align-items: flex-start;
-  height: 90vh;
-  align-content: center;
   align-items: center;
   justify-content: space-around;
-  padding: 100px 0 0 100px;
-  margin-bottom: 10vh;
-  max-height: 100vh;
+  padding: 100px 40px;
+  min-height: 90vh;
+  box-sizing: border-box;
 }
+
 #aboutme {
   display: flex;
   background-color: #25262a;
@@ -1279,6 +1277,7 @@ h2.impact-title {
 .tech-stack {
   width: 100%;
   padding: 1.5rem;
+  box-sizing: border-box;
 }
 
 .tech-stack .icons {
@@ -1294,9 +1293,12 @@ h2.impact-title {
   max-width: 60px;
   height: auto;
   object-fit: contain;
-  transition: transform 0.3s ease;
+  transition: transform 0.25s ease-in-out;
 }
 
-.tech-stack img:hover {
-  transform: scale(1.1);
+/* Hover only on devices that support hover */
+@media (hover: hover) {
+  .tech-stack img:hover {
+    transform: scale(1.1);
+  }
 }
