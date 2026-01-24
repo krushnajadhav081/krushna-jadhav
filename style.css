@@ -513,6 +513,13 @@
     display: block;
   }
 
+  /* Show only on laptop/desktop (hide on mobile/tablet) */
+  @media (max-width: 991.98px) {
+    .laptop-only {
+      display: none !important;
+    }
+  }
+
   /* Media queries for further adjustments */
   @media (max-width: 1200px) {
     .svg-animation {
