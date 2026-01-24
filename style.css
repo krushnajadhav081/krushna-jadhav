@@ -1281,24 +1281,34 @@ h2.impact-title {
 }
 
 .tech-stack .icons {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
-  gap: 1.2rem;
+  display: flex;
+  flex-wrap: nowrap;          /* Force one row */
+  justify-content: space-between;
   align-items: center;
-  justify-items: center;
+  gap: 1rem;
 }
 
 .tech-stack img {
-  width: 100%;
-  max-width: 60px;
+  width: clamp(28px, 4vw, 60px); /* Auto-scales by screen size */
   height: auto;
   object-fit: contain;
-  transition: transform 0.25s ease-in-out;
+  flex-shrink: 1;              /* Allows shrinking instead of wrapping */
 }
+
 
 /* Hover only on devices that support hover */
 @media (hover: hover) {
   .tech-stack img:hover {
     transform: scale(1.1);
+  }
+}
+@media (max-width: 600px) {
+  .tech-stack .icons {
+    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+    gap: 0.8rem;
+  }
+
+  .tech-stack img {
+    max-width: 40px;
   }
 }
