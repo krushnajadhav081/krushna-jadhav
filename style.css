@@ -513,12 +513,6 @@
     display: block;
   }
 
-  /* Show only on laptop/desktop (hide on mobile/tablet) */
-  @media (max-width: 991.98px) {
-    .laptop-only {
-      display: none !important;
-    }
-  }
 
   /* Media queries for further adjustments */
   @media (max-width: 1200px) {
@@ -1352,8 +1346,6 @@
 
   .tech-stack .icons {
     gap: 0.5rem;
-    justify-content: center;
-    flex-wrap: wrap; /* prevent icons being cut off on small screens */
   }
 
   .tech-stack img {
